@@ -19,7 +19,6 @@
 - [Usage](#usage)
 - [Backtesting](#backtesting)
 - [Deployment](#deployment)
-- [Project Structure](#project-structure)
 - [Troubleshooting](#troubleshooting)
 - [Disclaimer](#disclaimer)
 
@@ -212,31 +211,6 @@ python backtest.py
 7. Deploy!
 
 For detailed steps, see [RENDER_DEPLOYMENT.md](RENDER_DEPLOYMENT.md)
-
----
-
-## 📁 Project Structure
-
-\`\`\`
-trading-bot/
-├── main.py                    # Main bot entry point
-├── requirements.txt           # Dependencies
-├── Procfile                   # Render deployment
-├── render.yaml                # Render config
-│
-├── auth/login.py              # Authentication
-├── config/settings.py         # Configuration
-├── data/market_data.py        # Market data
-├── strategy/strategy.py       # Trading strategy
-├── risk/risk.py               # Risk management
-├── execution/orders.py        # Order execution
-│
-├── backtest_mock.py           # Mock backtesting
-├── backtest.py                # Real backtesting
-├── test_bot.py                # Integration test
-│
-└── logs/                       # Bot logs
-\`\`\`
 
 ---
 
