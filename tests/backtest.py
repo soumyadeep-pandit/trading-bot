@@ -10,8 +10,8 @@ import pandas as pd
 from datetime import datetime, timedelta
 from loguru import logger
 
-# Add project root to path
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+# Add project root to path (go up one level from tests folder)
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 from data.market_data import get_historical, kite
 from strategy.strategy import generate_signal
