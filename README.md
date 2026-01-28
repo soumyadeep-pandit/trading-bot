@@ -133,11 +133,12 @@ python -c "import kiteconnect; print('✅ All dependencies installed')"
 3. Create new app
 4. Copy API_KEY and API_SECRET
 
-#### 2. Get Access Token
+#### 2. Get Access Token (Daily Requirement)
 \`\`\`bash
 python auth/login.py
-# Follow the browser login, copy request token
+# Follow the browser login, copy request token from redirect URL
 # Paste when prompted
+# ⚠️ NOTE: Access Token expires daily and must be regenerated
 \`\`\`
 
 #### 3. Update config/settings.py
