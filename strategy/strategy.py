@@ -33,18 +33,20 @@ def generate_signal(data: list) -> str:
         
         last = df.iloc[-1]
         
-        # Buy Condition: EMA20 above EMA50, RSI in neutral zone, price above EMA20
+        # Buy Condition: Improved for better entry
+        # EMA20 > EMA50 (uptrend), RSI < 70 (not overbought), price above EMA20
         if (
             last['ema20'] > last['ema50'] and
-            40 < last['rsi'] < 60 and
+            last['rsi'] < 70 and
             last['close'] > last['ema20']
         ):
             return "BUY"
         
-        # Sell Condition: EMA20 below EMA50, RSI overbought
+        # Sell Condition: Improved for better exit
+        # EMA20 < EMA50 (downtrend) OR RSI > 80 (strongly overbought)
         if (
-            last['ema20'] < last['ema50'] and 
-            last['rsi'] > 60
+            (last['ema20'] < last['ema50']) or 
+            (last['rsi'] > 80)
         ):
             return "SELL"
         
