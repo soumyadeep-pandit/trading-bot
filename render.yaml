@@ -1,0 +1,17 @@
+services:
+  - type: worker
+    name: trading-bot
+    runtime: python
+    runtimeVersion: 3.9
+    buildCommand: pip install -r requirements.txt
+    startCommand: python main.py
+    envVars:
+      - key: API_KEY
+        scope: build
+      - key: API_SECRET
+        scope: build
+      - key: ACCESS_TOKEN
+        scope: build
+      - key: MODE
+        scope: build
+        value: PAPER
